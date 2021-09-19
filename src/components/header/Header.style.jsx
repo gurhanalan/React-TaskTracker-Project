@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const colors = {
+export const colors = {
     color1: "#33B864",
     color1dark: "#677A04",
     color2: "#FFE5AD",

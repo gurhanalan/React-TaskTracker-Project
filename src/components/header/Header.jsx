@@ -3,12 +3,10 @@ import { ButtonHeader, Title, Wrapper } from "./Header.style";
 
 function Header() {
     return (
-        <div>
-            <Wrapper>
-                <Title>Task Tracker</Title>
-                <ButtonHeader>Hide Task Bar</ButtonHeader>
-            </Wrapper>
-        </div>
+        <Wrapper>
+            <Title>Task Tracker</Title>
+            <ButtonHeader>Hide Task Bar</ButtonHeader>
+        </Wrapper>
     );
 }
 
