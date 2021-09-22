@@ -4,7 +4,7 @@ import { colors } from "../header/Header.style";
 export const TaskDate = styled.p`
     font-size: 1.5rem;
     color: black;
-    width: 40rem;
+    /* width: 35rem; */
 `;
 
 export const TaskTitle = styled(TaskDate)`
@@ -34,18 +34,17 @@ export const TaskTitle = styled(TaskDate)`
 export const TaskWrapper = styled.div`
     background-color: ${colors.color1};
     padding: 1rem 2rem;
+    width: 40rem;
     border-radius: 0.5rem;
     box-shadow: 0 2rem 2rem hsla(0, 0%, 0%, 0.3);
-
+    cursor: pointer;
+    user-select: none;
     ${(props) =>
         props.status &&
         css`
             border-left: solid 0.5rem red;
-            background-color: yellow;
-        `}
-    ${(props) =>
-        props.closed &&
-        css`
-            display: none;
+            background-color: ${colors.color3};
+            text-decoration: line-through solid red;
+            text-decoration-thickness: 20%;
         `}
 `;
