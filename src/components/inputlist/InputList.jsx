@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ButtonHeader, Wrapper } from "../header/Header.style";
 import Input from "./Input";
 
-function InputList({ addTask }) {
+function InputList({ addTask, showInputField }) {
     const [taskNew, setTaskNew] = useState("");
     const [date, setDate] = useState("");
 
@@ -25,7 +25,9 @@ function InputList({ addTask }) {
         addTask(task);
     };
     return (
-        <Wrapper>
+        <Wrapper
+            style={showInputField ? { display: "flex" } : { display: "none" }}
+        >
             <Input
                 label="Task"
                 placeholder="Enter a task"
