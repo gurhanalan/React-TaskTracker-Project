@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const LabelInput = styled.label`
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: black;
     font-weight: bolder;
 `;
