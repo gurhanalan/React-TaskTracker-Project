@@ -4,6 +4,7 @@ export const colors = {
     color1: "#33B864",
     color1dark: "#677A04",
     color2: "#FFE5AD",
+    color3: "lightgrey",
 };
 
 export const Title = styled.h1`
@@ -42,4 +43,5 @@ export const Wrapper = styled.div`
     align-items: center;
     flex-direction: ${(props) => (props.row ? "row" : "column")};
     /* flex-direction: column; */
+    font-size: 2rem;
 `;
