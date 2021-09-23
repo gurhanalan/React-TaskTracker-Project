@@ -1,24 +1,18 @@
 import React, { useState } from "react";
 import { TaskDate, TaskTitle, TaskWrapper } from "./task.style";
 
-import { FaTimes, FaTrashAlt } from "react-icons/fa";
+import { FaTimes, FaTrashAlt, FaThumbsUp } from "react-icons/fa";
 
-function Task({ item }) {
+function Task({ item, toggleIsDone }) {
     const [isDone, setIsDone] = useState(false);
-    const [isClosed, setIsClosed] = useState(false);
 
     return (
-        <TaskWrapper
-            onClick={() => setIsDone(!isDone)}
-            status={isDone}
-            closed={isClosed}
-        >
+        <TaskWrapper onClick={() => setIsDone(!isDone)} status={isDone}>
             <TaskTitle>
                 {item.task}{" "}
                 <span>
                     {" "}
-                    <FaTrashAlt />
-                    <FaTimes onClick={() => setIsClosed(!isClosed)} />{" "}
+                    <FaTimes onClick={() => toggleIsDone(item.id)} />{" "}
                 </span>
             </TaskTitle>
             <TaskDate>{item.date}</TaskDate>
