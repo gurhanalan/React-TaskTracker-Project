@@ -22,15 +22,31 @@ const taskArray = [
 ];
 
 function App() {
+    // Hooks
     const [tasks, setTasks] = useState(taskArray);
+    const [showInputField, setShowInputField] = useState(true);
 
+    // Functions
     const addTask = (newTask) => setTasks([...tasks, newTask]);
+    const toggleInputDisplay = () => setShowInputField(!showInputField);
+
+    const toggleIsDone = (idtarget) => {
+        setTasks(
+            tasks.map((task) =>
+                task.id === idtarget ? { ...task, isDone: !task.isDone } : task
+            )
+        );
+    };
+
     return (
         <div className="App">
             <WrapperMain>
-                <Header />
-                <InputList addTask={addTask}/>
-                <TaskList taskArray={tasks} />
+                <Header
+                    toggleInputDisplay={toggleInputDisplay}
+                    showInputField={showInputField}
+                />
+                <InputList addTask={addTask} showInputField={showInputField} />
+                <TaskList taskArray={tasks} toggleIsDone={toggleIsDone} />
             </WrapperMain>
         </div>
     );
